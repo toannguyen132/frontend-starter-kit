@@ -1,0 +1,43 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./ -a localhost -p 8000 -c-1"
+  },
+  "author": "Toan Nguyen",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.5",
+    "http-server": "^0.8.5",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.min.js",
+    "angular": "./bower_components/angular/angular.min.js",
+    "angular-waypoints": "./bower_components/angular-waypoints/dist/angular-waypoints.all.min.js"
+  },
+  "browserify-shim": {
+    "jquery": {
+      "exports": "$"
+    },
+    "angular": {
+      "exports": "angular",
+      "depends": "jquery"
+    }
+  },
+  "dependencies": {
+    "browserify-shim": "^3.8.12"
+  }
+}
