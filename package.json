@@ -1,6 +1,6 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
+  "name": "frontend-starter-kit",
+  "version": "0.9",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
