@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 
 /** JS **/
 var browserify_tasks = [];
@@ -27,10 +28,12 @@ gulp.task('browserify' , function() {
 /** SASS **/
 gulp.task('sass', function(){
 	gulp.src('./assets/scss/*.scss')
+  		.pipe(sourcemaps.init())
 		.pipe( sass() )
 		.pipe( autoprefixer( {
 			browsers: ['last 2 versions'],
 			cascade: false } ) )
+  		.pipe(sourcemaps.write())
 		.pipe( gulp.dest('./public/css') );
 });
 
